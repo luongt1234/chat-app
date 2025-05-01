@@ -20,5 +20,8 @@
     "mongodb": "^6.16.0",
     "mongoose": "^8.14.0",
     "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "react-router-dom": "^7.5.3"
   }
 }

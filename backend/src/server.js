@@ -26,13 +26,16 @@ const PORT = process.env.PORT || 300;
 const hostname = process.env.HOSTNAME || "hostname";
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true
+}));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use("/api/auth", authRoute);
 app.use("/api/message", messageRoute);
 
-app.listen(PORT, hostname, ()=>{
-    console.log(`server is running on port http://${hostname}:${PORT}`);
+app.listen(PORT, hostname, () => {
+  console.log(`server is running on port http://${hostname}:${PORT}`);
 });
