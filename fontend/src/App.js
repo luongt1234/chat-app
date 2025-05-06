@@ -9,14 +9,16 @@ import SettingsPage from './pages/settingsPage';
 import ProfilePage from './pages/profilePage';
 import ErrorPage from './pages/errorPage';
 import { useAuthStore } from './store/useAuthStore';
-import { Loader } from 'lucide-react';
+// import { Loader } from 'lucide-react';
 import {Toaster} from 'react-hot-toast';
 // import theme from './constants/index';
 import { useThemeStore } from './store/useThemeStore';
 
 const App = () => {
-  const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
+  const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore();
   const { theme } = useThemeStore();
+
+  console.log({onlineUsers});
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
